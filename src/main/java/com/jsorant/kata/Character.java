@@ -19,11 +19,19 @@ public class Character {
   public void receiveDamage(int damage) {
     health = Math.max(0, health - damage);
     receivedDamage += damage;
-    if (health > 0) {
-      if (receivedDamage >= level * LEVEL_UP_FACTOR) {
-        level++;
-        receivedDamage = 0;
-      }
+    if (!died()) {
+      computeLevelUp();
+    }
+  }
+
+  private boolean died() {
+    return health == 0;
+  }
+
+  private void computeLevelUp() {
+    if (receivedDamage >= level * LEVEL_UP_FACTOR) {
+      level++;
+      receivedDamage = 0;
     }
   }
 
