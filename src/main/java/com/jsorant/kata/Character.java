@@ -24,6 +24,6 @@ public class Character {
 
   public void heal(HealingMagicalObject healingMagicalObject) {
     if (health != 1000)
-      health += healingMagicalObject.health();
+      health = Math.min(1000, health + healingMagicalObject.health());
   }
 }
