@@ -16,7 +16,6 @@ public class Character {
 
   public void receiveDamage(int damage) {
     health -= damage;
-    level++;
   }
 
   public int level() {

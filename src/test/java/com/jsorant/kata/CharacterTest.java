@@ -21,10 +21,12 @@ public class CharacterTest {
     }
 
     @Test
-    void shouldGainLevelWhenCharacterSurviveAfterDamageReceiving() {
+    void shouldNotLevelUpToLevelTwoWhenNotReceiveOneThousandDamage() {
       var character = new Character();
-      character.receiveDamage(500);
-      assertThat(character.level()).isEqualTo(2);
+
+      character.receiveDamage(999);
+
+      assertThat(character.level()).isEqualTo(1);
     }
   }
 
