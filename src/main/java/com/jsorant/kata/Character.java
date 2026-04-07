@@ -21,4 +21,8 @@ public class Character {
   public int level() {
     return level;
   }
+
+  public void heal(HealingMagicalObject healingMagicalObject) {
+    health += healingMagicalObject.health();
+  }
 }

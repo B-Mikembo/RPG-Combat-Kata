@@ -37,4 +37,17 @@ public class CharacterTest {
       assertThat(character.health()).isEqualTo(500);
     }
   }
+
+  @Nested
+  class Healing {
+    @Test
+    void shouldBeHealedWhenHealWithHealingMagicalObject() {
+      var character = new Character();
+      character.receiveDamage(500);
+
+      character.heal(new HealingMagicalObject(100));
+
+      assertThat(character.health()).isEqualTo(600);
+    }
+  }
 }
