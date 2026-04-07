@@ -1,6 +1,7 @@
 package com.jsorant.kata;
 
 public class Character {
+  private static final int MAX_HEALTH = 1_000;
   private int health;
   private int level;
 
@@ -23,7 +24,7 @@ public class Character {
   }
 
   public void heal(HealingMagicalObject healingMagicalObject) {
-    if (health != 1000)
-      health = Math.min(1000, health + healingMagicalObject.health());
+    if (health != MAX_HEALTH)
+      health = Math.min(MAX_HEALTH, health + healingMagicalObject.health());
   }
 }
