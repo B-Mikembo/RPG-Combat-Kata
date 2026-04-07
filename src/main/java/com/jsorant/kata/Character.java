@@ -14,4 +14,8 @@ public class Character {
   public void receiveDamage(int damage) {
     health -= damage;
   }
+
+  public int level() {
+    return 1;
+  }
 }

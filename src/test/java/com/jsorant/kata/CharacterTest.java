@@ -12,6 +12,11 @@ public class CharacterTest {
   }
 
   @Test
+  void shouldLevelBeOneWhenCreateNewCharacter() {
+    assertThat(new Character().level()).isEqualTo(1);
+  }
+
+  @Test
   void shouldReduceHealthWhenCharacterReceiveDamage() {
     var character = new Character();
     character.receiveDamage(500);
