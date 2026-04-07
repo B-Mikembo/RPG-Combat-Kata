@@ -8,6 +8,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class MagicalWeaponTest {
   @Test
   void shouldHealthBeFixedWhenCreateMagicalWeapon() {
-    assertThat(new MagicalWeapon(100).health()).isEqualTo(100);
+    assertThat(new MagicalWeapon(100, 50).health()).isEqualTo(100);
+  }
+
+  @Test
+  void shouldDamageBeFixedWhenCreateMagicalWeapon() {
+    assertThat(new MagicalWeapon(100, 50).damage()).isEqualTo(50);
   }
 }
