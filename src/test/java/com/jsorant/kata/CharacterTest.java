@@ -49,5 +49,14 @@ public class CharacterTest {
 
       assertThat(character.health()).isEqualTo(600);
     }
+
+    @Test
+    void shouldNotBeHealedWhenHealMaximumHealth() {
+      var character = new Character();
+
+      character.heal(new HealingMagicalObject(100));
+
+      assertThat(character.health()).isEqualTo(1000);
+    }
   }
 }

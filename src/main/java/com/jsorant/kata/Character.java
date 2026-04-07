@@ -23,6 +23,7 @@ public class Character {
   }
 
   public void heal(HealingMagicalObject healingMagicalObject) {
-    health += healingMagicalObject.health();
+    if (health != 1000)
+      health += healingMagicalObject.health();
   }
 }
