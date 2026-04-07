@@ -20,7 +20,7 @@ public class MagicalWeaponTest {
   void shouldReduceHealthWhenDealDamage() {
     var magicalWeapon = new MagicalWeapon(100, 50);
 
-    magicalWeapon.damage();
+    magicalWeapon.use();
 
     assertThat(magicalWeapon.health()).isEqualTo(99);
   }
