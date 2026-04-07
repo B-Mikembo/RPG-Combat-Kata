@@ -14,6 +14,7 @@ public class MagicalWeapon {
   }
 
   public int damage() {
+    health--;
     return damage;
   }
 }

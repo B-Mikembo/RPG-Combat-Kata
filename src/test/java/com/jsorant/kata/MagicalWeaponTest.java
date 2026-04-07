@@ -15,4 +15,13 @@ public class MagicalWeaponTest {
   void shouldDamageBeFixedWhenCreateMagicalWeapon() {
     assertThat(new MagicalWeapon(100, 50).damage()).isEqualTo(50);
   }
+
+  @Test
+  void shouldReduceHealthWhenDealDamage() {
+    var magicalWeapon = new MagicalWeapon(100, 50);
+
+    magicalWeapon.damage();
+
+    assertThat(magicalWeapon.health()).isEqualTo(99);
+  }
 }
