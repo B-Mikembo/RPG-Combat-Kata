@@ -1,9 +1,11 @@
 package com.jsorant.kata;
 
 public class Character {
+  public static final int LEVEL_UP_FACTOR = 1_000;
   private static final int MAX_HEALTH = 1_000;
   private int health;
   private int level;
+  private int receivedDamage;
 
   public Character() {
     health = 1000;
@@ -15,7 +17,14 @@ public class Character {
   }
 
   public void receiveDamage(int damage) {
-    health -= damage;
+    health = Math.max(0, health - damage);
+    receivedDamage += damage;
+    if (health > 0) {
+      if (receivedDamage >= level * LEVEL_UP_FACTOR) {
+        level++;
+        receivedDamage = 0;
+      }
+    }
   }
 
   public int level() {

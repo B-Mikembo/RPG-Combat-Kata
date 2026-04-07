@@ -28,6 +28,17 @@ public class CharacterTest {
 
       assertThat(character.level()).isEqualTo(1);
     }
+
+    @Test
+    void shouldLevelUpWhenReceiveEnoughDamageWithoutDie() {
+      var character = new Character();
+      character.receiveDamage(999);
+      character.heal(new HealingMagicalObject(1_000));
+
+      character.receiveDamage(50);
+
+      assertThat(character.level()).isEqualTo(2);
+    }
   }
 
   @Nested
