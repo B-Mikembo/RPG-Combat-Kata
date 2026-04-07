@@ -10,4 +10,11 @@ public class CharacterTest {
   void shouldHealthBe1000WhenCreateNewCharacter() {
     assertThat(new Character().health()).isEqualTo(1000);
   }
+
+  @Test
+  void shouldReduceHealthWhenCharacterReceiveDamage() {
+    var character = new Character();
+    character.receiveDamage(500);
+    assertThat(character.health()).isEqualTo(500);
+  }
 }
